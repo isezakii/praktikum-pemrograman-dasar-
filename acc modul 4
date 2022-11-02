@@ -1,0 +1,52 @@
+package sus;
+
+public class sus {
+
+    public static void main (String[] args){
+
+        // looping bersarang
+        System.out.println("==========ACC MODUL 4 PERULANGAN========");
+        System.out.println("Nama : ");
+        System.out.println("NIM  : ");
+        System.out.println("Kelas: ");
+
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 16; j++){
+                System.out.print("| ");
+                if (i == j){
+                    break;
+                } else if ( (i+j) == 15){
+                    break;
+                }
+            }
+            System.out.print("@ @ @ @ @ > >\n");
+        }
+        
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 16; j++){
+                System.out.print("# ");
+                if (i == j){
+                    break;
+                } else if ( (i+j) == 15){
+                    break;
+                }
+            }
+            System.out.print("* * * * * > >\n");
+        }
+        
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 16; j++){
+                System.out.print("& ");
+                if (i == j){
+                    break;
+                } else if ( (i+j) == 15){
+                    break;
+                }
+            }
+            System.out.print("* * * * * > >\n");
+        }
+    }
+}
+
+
+
