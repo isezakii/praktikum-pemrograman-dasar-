@@ -1,0 +1,99 @@
+package sus;
+
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author DELL
+ */
+public class sus2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("==========ACC MODUL 5 STRING==========");
+        
+        String nama;
+        String nim;
+        String cari;
+        
+        System.out.print("Masukkan nama : ");
+        nama = input.nextLine();
+        System.out.print("Masukkan Nim  : ");
+        nim = input.nextLine();
+        System.out.println("======================================");
+        System.out.println("Kata Yang Digunakan : "+nama);
+        System.out.println("Pilihan :");
+        System.out.println("1. Length");
+        System.out.println("2. LowerCase");
+        System.out.println("3. SubString");
+        System.out.println("4. Delete");
+        System.out.println("5. Contains");
+        System.out.println("6. Exit");
+        int loop = 0;
+        boolean lanjut = true;
+        while (lanjut){
+            loop++;
+            System.out.println("======================================");
+        System.out.print  ("Masukkan Pilihan : ");
+        int pilihan = input.nextInt();
+        if(pilihan == 1){
+            System.out.println("Jumlah karakter : "+nama.length());
+        }
+        if(pilihan == 2){
+            System.out.println(nama.toLowerCase());
+        }
+        if(pilihan == 3){
+            System.out.print("masukkan indeks pertama : ");
+            int index1 = input.nextInt();
+            System.out.print("masukkan indeks kedua   : ");
+            int index2 = input.nextInt();
+            System.out.println("Substring dari indeks ke "+ index1 + "dan "+ index2 + "adalah: "+nama.substring(index1,index2));
+        }
+        if(pilihan == 4){
+        StringBuffer namabuffer = new StringBuffer(nama);
+            System.out.print  ("masukkan indeks pertama : ");
+            int index1 = input.nextInt();
+            System.out.print  ("masukkan indeks kedua   : ");
+            int index2 = input.nextInt();
+        namabuffer.delete(index1, index2);
+        System.out.println("Hasil : " + namabuffer);
+        }
+        if(pilihan == 5){
+            System.out.print("masukkan kata yang ingin dicari : ");
+            cari = input.next();
+            
+            if(nama.contains(cari)){
+                System.out.println("Hasil : True");
+            }
+            else{
+                System.out.println("hasil : False");
+            }
+        }
+        if(pilihan == 6){
+            System.out.println("Exit");
+        }
+            
+        
+        lanjut = getYesorNo("Apakah Anda ingin melanjutkan");
+     }
+       
+        
+    }
+        private static boolean getYesorNo(String message){
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.print("\n"+message+" (y/n)? ");
+        String pilihanUser = terminalInput.next();
+
+        while(!pilihanUser.equalsIgnoreCase("y") && !pilihanUser.equalsIgnoreCase("n")) {
+            System.err.println("Pilihan anda bukan y atau n");
+            System.out.print("\n"+message+" (y/n)? ");
+            pilihanUser = terminalInput.next();
+        }
+
+        return pilihanUser.equalsIgnoreCase("y");
+
+    }
+    
+}
+
