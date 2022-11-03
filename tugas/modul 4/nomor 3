@@ -8,10 +8,11 @@ public class test {
 
         Scanner input = new Scanner(System.in);
         boolean isLanjutkan = true;
-        System.out.print("Masukkan Nama : ");
-        String nama = input.nextLine();
+
 
         while (isLanjutkan) {
+            System.out.print("Masukkan Nama : ");
+            String nama = input.nextLine();
             System.out.print("Masukkan Nilai Pertama : ");
             int nilai1 = input.nextInt();
             System.out.print("Masukkan Nilai Kedua   : ");
