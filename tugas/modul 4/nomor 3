@@ -1,0 +1,42 @@
+package sus;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class test {
+    public static void main(String[] args) throws IOException {
+
+        Scanner input = new Scanner(System.in);
+        boolean isLanjutkan = true;
+        System.out.print("Masukkan Nama : ");
+        String nama = input.nextLine();
+
+        while (isLanjutkan) {
+            System.out.print("Masukkan Nilai Pertama : ");
+            int nilai1 = input.nextInt();
+            System.out.print("Masukkan Nilai Kedua   : ");
+            int nilai2 = input.nextInt();
+            System.out.print("Masukkan Nilai Ketiga  : ");
+            int nilai3 = input.nextInt();
+            System.out.print("Jumlah                 : "+(nilai1 + nilai2 + nilai3));
+
+            isLanjutkan = getYesorNo("Apakah Anda ingin melanjutkan");
+        }
+    }
+
+    private static boolean getYesorNo(String message){
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.print("\n"+message+" (y/n)? ");
+        String pilihanUser = terminalInput.next();
+
+        while(!pilihanUser.equalsIgnoreCase("y") && !pilihanUser.equalsIgnoreCase("n")) {
+            System.err.println("Pilihan anda bukan y atau n");
+            System.out.print("\n"+message+" (y/n)? ");
+            pilihanUser = terminalInput.next();
+        }
+
+        return pilihanUser.equalsIgnoreCase("y");
+
+    }
+
+}
