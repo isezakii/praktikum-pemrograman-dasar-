@@ -1,3 +1,4 @@
-# praktikum-pemrograman-dasar-source
+# praktikum-pemrograman-dasar
+source
 
-Discord: isezaki#4443
+[Discord](https://www.discord.com): isezaki#4443
