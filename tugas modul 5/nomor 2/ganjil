@@ -28,7 +28,7 @@ public class m5t2 {
         System.out.print  ("Masukkan Pilihan : ");
         int pilihan = input.nextInt();
         if(pilihan == 1){
-            System.out.println("Jumlah karakter : "+kata.toUpperCase());
+            System.out.println("Hasil : "+kata.toUpperCase());
         }
         
         if(pilihan == 2){
