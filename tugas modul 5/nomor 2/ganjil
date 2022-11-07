@@ -1,0 +1,78 @@
+package sus;
+
+
+import java.util.Scanner;
+
+
+public class m5t2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("========TUGAS 2 MODUL 5 GANJIL========");
+        
+        String kata;
+        
+        System.out.print("Masukkan kata yang ingin digunakan : ");
+        kata = input.nextLine();
+        System.out.println("======================================");
+        System.out.println("Kata Yang Digunakan : "+kata);
+        System.out.println("Pilihan :");
+        System.out.println("1. toUpperCase");
+        System.out.println("2. EndsWith");
+        System.out.println("3. IndexOf");
+        System.out.println("4. Substring");
+        int loop = 0;
+        boolean lanjut = true;
+        while (lanjut){
+            loop++;
+            System.out.println("======================================");
+        System.out.print  ("Masukkan Pilihan : ");
+        int pilihan = input.nextInt();
+        if(pilihan == 1){
+            System.out.println("Jumlah karakter : "+kata.toUpperCase());
+        }
+        
+        if(pilihan == 2){
+            System.out.print("sebutkan kata akhiran yang ingin di cek : ");
+            String akhiran = input.next();
+            boolean cekAkhir = kata.endsWith(akhiran);
+            System.out.println("Kondisi Akhiran : "+cekAkhir);
+        }
+        
+        if(pilihan == 3){
+            System.out.print("Masukkan huruf/angka index yang ingin dicari : ");
+            String cari = input.next();
+            int cariIndex = kata.indexOf(cari);
+            System.out.println("Karakter M Berada di Posisi ke-"+cariIndex);
+        }
+        
+        if(pilihan == 4){
+            System.out.print("masukkan indeks pertama : ");
+            int index1 = input.nextInt();
+            System.out.print("masukkan indeks kedua   : ");
+            int index2 = input.nextInt();
+            System.out.println("Substring dari indeks ke "+ index1 + "dan "+ index2 + "adalah: "+kata.substring(index1,index2));
+        }
+            
+        
+        lanjut = getYesorNo("Apakah Anda ingin melanjutkan");
+     }
+       
+        
+    }
+        private static boolean getYesorNo(String message){
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.print("\n"+message+" (y/n)? ");
+        String pilihanUser = terminalInput.next();
+
+        while(!pilihanUser.equalsIgnoreCase("y") && !pilihanUser.equalsIgnoreCase("n")) {
+            System.err.println("Pilihan anda bukan y atau n");
+            System.out.print("\n"+message+" (y/n)? ");
+            pilihanUser = terminalInput.next();
+        }
+
+        return pilihanUser.equalsIgnoreCase("y");
+
+    }
+    
+}
+
