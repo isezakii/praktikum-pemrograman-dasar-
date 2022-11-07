@@ -1,0 +1,25 @@
+
+package sus;
+
+
+public class m5t1 {
+    public static void main(String args[]) {
+        //StringBuffer, string append dan CharSequence
+StringBuffer sbf = new StringBuffer(25);
+StringBuffer sbf1 = new StringBuffer("Selamat ");
+CharSequence chsq = "Belajar Java";
+sbf1.append(chsq);
+System.out.println("Isi : " + sbf1.toString());
+System.out.println("Kapasitas : " + sbf.capacity());
+System.out.println("Panjang : " + sbf1.length());
+
+        System.out.println(" ");
+
+StringBuffer sbf2 = new StringBuffer(25);
+StringBuffer sbf3 = new StringBuffer("Selamat");
+System.out.println("Isi : " + sbf3.toString());
+System.out.println("Kapasitas : " + sbf2.capacity());
+System.out.println("Panjang : " + sbf3.length());
+}
+    
+}
