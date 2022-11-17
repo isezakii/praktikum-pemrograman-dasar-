@@ -1,0 +1,110 @@
+package sus;
+
+
+
+import java.util.Scanner;
+
+public class pd {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("============MODUL 5 STRING============");
+        
+        System.out.print("Masukkan kata yang ingin digunakan : ");
+        String kata = input.nextLine();
+        System.out.println("======================================");
+        System.out.println("Kata Yang Digunakan : "+kata);
+        System.out.println("Pilihan :");
+        System.out.println("1. LowerCase");
+        System.out.println("2. Replace");
+        System.out.println("3. Contains");
+        System.out.println("4. Split");
+        System.out.println("5. Trim");
+        System.out.println("6. StartsWith");
+        System.out.println("7. Exit");
+        int loop = 0;
+        boolean lanjut = true;
+        while (lanjut){
+            loop++;
+            System.out.println("======================================");
+        System.out.print  ("Masukkan Pilihan : ");
+        int pilihan = input.nextInt();
+        
+        if(pilihan == 1){
+            System.out.println(kata.toLowerCase());
+        }
+        
+        if(pilihan == 2){
+            System.out.print("Masukkan kata yang ingin ditukar : ");
+            String kata1 = input.next();
+            System.out.print("Masukkan kata pengganti baru : ");
+            String kata2 = input.next();
+            String hasil = kata.replace(kata1,kata2);
+            System.out.println("hasil : "+hasil);
+        }
+        
+        if(pilihan == 3){
+            System.out.print("masukkan kata yang ingin dicari : ");
+            String cari = input.next();
+            
+            if(kata.contains(cari)){
+                System.out.println("Hasil : True");
+            }
+            else{
+                System.out.println("hasil : False");
+            }
+        }
+        
+        if(pilihan == 4){
+            System.out.println("hasil split setiap spasi : ");
+            for(String n:kata.split("\\s",0)){  
+            System.out.println(n);  
+            }
+            System.out.println("hasil split kata pertama : ");  
+            for(String n:kata.split("\\s",2)){  
+            System.out.println(n);   
+            }
+        }
+        
+        if(pilihan == 5){
+            System.out.println("hasil : "+kata.trim());
+            System.err.println("Pilihan ini hanya menghilangkan spasi sebelum kata pertama");
+        }
+        
+        if(pilihan == 6){
+            System.out.print("masukkan kata awalan yang ingin dicari : ");
+            String cari = input.next();
+            
+            if(kata.startsWith(cari)){
+                System.out.println("Hasil : True");
+            }
+            else{
+                System.out.println("hasil : False");
+            }
+        }
+        
+        if(pilihan == 7){
+            System.out.println("Exit");
+        }
+            
+        
+        lanjut = getYesorNo("Apakah Anda ingin melanjutkan");
+     }
+       
+        
+    }
+        private static boolean getYesorNo(String message){
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.print("\n"+message+" (y/n)? ");
+        String pilihanUser = terminalInput.next();
+
+        while(!pilihanUser.equalsIgnoreCase("y") && !pilihanUser.equalsIgnoreCase("n")) {
+            System.err.println("Pilihan anda bukan y atau n");
+            System.out.print("\n"+message+" (y/n)? ");
+            pilihanUser = terminalInput.next();
+        }
+
+        return pilihanUser.equalsIgnoreCase("y");
+
+    }
+    
+}
