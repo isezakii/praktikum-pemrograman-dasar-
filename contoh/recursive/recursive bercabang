@@ -1,9 +1,8 @@
 package sus;
 
 import java.util.*;
-import java.lang.String;
 
-public class test4 {
+public class recursive1 {
 
     public static void main (String[] args){
 
